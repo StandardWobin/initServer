@@ -15,7 +15,7 @@
 
 
 
-## set up basics
+## set up and secure basic server
 1. ssh via Kitty
 2. change root password ```passwd root``` [generate and store password]
 3. ```sudo apt update -y```
