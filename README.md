@@ -9,14 +9,15 @@
 
 ## to do before you ssh
 1. generate ssh files using ```ssh-keygen```
-2. convert ssh private key to ppk file using puttygen
+2. **BACKUP SSL PRIVATY KEY**, if you loose that you are out of the server - forever
+3. convert ssh private key to ppk file using puttygen
 
 
 
 
 ## set up machine
 1. ssh via Kitty
-2. change root password ```passwd root```
+2. change root password ```passwd root``` 
 
 
 
