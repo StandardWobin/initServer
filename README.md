@@ -26,7 +26,7 @@ this init is for UBUNTU 22
 9. ```adduser webadmin``` [generade and store password]
 10. ```usermod -aG sshlogin webadmin```
 11. ```echo "AllowGroups sshlogin" >> /etc/ssh/sshd_config```
-12. edit /etc/ssh/sshd_config and set "PermitRootLogin **no**" and "PasswordAuthentication **no**"
+12. ```nano /etc/ssh/sshd_config``` and set "PermitRootLogin **no**" and "PasswordAuthentication **no**"
 13. ```chown -R webadmin:webadmin ~/.ssh```
 14. ```echo "IPV6=no" >> /etc/ufw/ufw.conf```
 15. ```ufw allow OpenSSH```
