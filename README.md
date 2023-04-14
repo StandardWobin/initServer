@@ -29,7 +29,7 @@
 11. ```echo "AllowGroups sshlogin" >> /etc/ssh/sshd_config```
 12. edit /etc/ssh/sshd_config and set "PermitRootLogin **no**" and "PasswordAuthentication **no**"
 13. ```chown -R webadmin:webadmin ~/.ssh```
-14. ```echo "IPV6=no" >> /etc/ufw/ufw.conf
+14. ```echo "IPV6=no" >> /etc/ufw/ufw.conf```
 15. ```ufw allow OpenSSH
 16. ```ufw allow https
 17. ```ufw allow http
