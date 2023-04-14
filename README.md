@@ -28,17 +28,21 @@
 10. ```usermod -aG sshlogin webadmin```
 11. ```echo "AllowGroups sshlogin" >> /etc/ssh/sshd_config```
 12. edit /etc/ssh/sshd_config and set "PermitRootLogin **no**" and "PasswordAuthentication **no**"
-13.    ````service ssh restart
-echo "IPV6=no" >> /etc/ufw/ufw.conf
-ufw allow OpenSSH
-ufw --force enable```
+13. ```chown -R webadmin:webadmin ~/.ssh```
+14. ```echo "IPV6=no" >> /etc/ufw/ufw.conf
+15. ```ufw allow OpenSSH
+16. ```ufw allow https
+17. ```ufw allow http
+18. ```ufw --force enable```
+19. ```service ssh restart```
+
+PLease test if you can login via ssh:
+Login via Root shoud not be possible anymore
+Login via webadmin and password should not be possible
+You need to add the local private key to Kitty to authenticae 
 
 
 
-
-
-
-8. ```chown -R sammy:sammy ~/.ssh```
 
 
 
