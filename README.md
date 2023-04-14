@@ -16,7 +16,7 @@
 
 ## set up machine
 1. ssh via Kitty
-2. 
+2. change root password ```passwd root```
 
 
 
