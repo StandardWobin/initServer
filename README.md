@@ -9,11 +9,8 @@ this init is for UBUNTU 22
 4. Save Place to store private key (if you loose that, ther server is not accessable anymore - THERE IST NO WAY AROUND)
 
 ## to do before you ssh
-1. generate ssh files using ```ssh-keygen```
+1. Genreate public and private key using puttygen
 2. **BACKUP SSL PRIVATY KEY**, if you loose that you are out of the server - forever
-3. convert ssh **PUBLIC** key to ppk file using puttygen
-
-
 
 
 ## set up and secure basic server
