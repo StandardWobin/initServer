@@ -30,9 +30,9 @@
 12. edit /etc/ssh/sshd_config and set "PermitRootLogin **no**" and "PasswordAuthentication **no**"
 13. ```chown -R webadmin:webadmin ~/.ssh```
 14. ```echo "IPV6=no" >> /etc/ufw/ufw.conf```
-15. ```ufw allow OpenSSH
-16. ```ufw allow https
-17. ```ufw allow http
+15. ```ufw allow OpenSSH```
+16. ```ufw allow https```
+17. ```ufw allow http```
 18. ```ufw --force enable```
 19. ```service ssh restart```
 
