@@ -17,16 +17,18 @@
 
 ## set up basics
 1. ssh via Kitty
-2. change root password ```passwd root``` *[generate and store password]*
+2. change root password ```passwd root``` [generate and store password]
 3. ```sudo apt update -y```
 4. ```sudo apt upgrade -y```
 5. ```mkdir -p ~/.ssh ```
 6. copy local private ssh key echo ```public_key_string >> ~/.ssh/authorized_keys```
-7.```chmod -R go= ~/.ssh```
-8.```groupadd sshlogin```
-9.```adduser webadmin```
-[generade and store password]
-
+7. ```chmod -R go= ~/.ssh```
+8. ```groupadd sshlogin```
+9. ```adduser webadmin``` [generade and store password]
+10. ```usermod -aG sshlogin webadmin```
+11. ```echo "AllowGroups sshlogin" >> /etc/ssh/sshd_config```
+12. edit /etc/ssh/sshd_config and set "PermitRootLogin **no**" and "PasswordAuthentication **no**"
+13.     
 
 
 
