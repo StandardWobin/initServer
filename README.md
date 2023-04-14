@@ -19,32 +19,73 @@ this init is for UBUNTU 22
 2. change root password ```passwd root``` [generate and store password]
 3. ```sudo apt update -y```
 4. ```sudo apt upgrade -y```
-
 9. ```groupadd sshlogin```
 10. ```adduser webadmin``` [generade and store password]
 11. ```usermod -aG sshlogin webadmin```
-12. ```su webadmin```
-13. ```mkdir -p ~/.ssh ```
-14. copy local **public** ssh key content string via  ```echo "ssh-rsa XXXXXXXXKEXYYYYYYYYYY" >> ~/.ssh/authorized_keys```
-15. ```chmod -R go= ~/.ssh```
+11. ```usermod -aG sudo webadmin```
+13. ```su webadmin```
+14. ```mkdir -p ~/.ssh ```
+15. copy local **public** ssh key content string via  ```echo "ssh-rsa XXXXXXXXKEXYYYYYYYYYY" >> ~/.ssh/authorized_keys```
+16. ```chmod -R go= ~/.ssh```
 18. ```chown -R webadmin:webadmin ~/.ssh```
 19. ```su root```
-18. ```echo "AllowGroups sshlogin" >> /etc/ssh/sshd_config```
-19. ```nano /etc/ssh/sshd_config``` and set "PermitRootLogin **no**" and "PasswordAuthentication **no**"
-20. ```echo "IPV6=no" >> /etc/ufw/ufw.conf```
-21. ```ufw allow OpenSSH```
-22. ```ufw allow https```
-23. ```ufw allow http```
-24. ```ufw --force enable```
-25. ```service ssh restart```
+19. ```echo "AllowGroups sshlogin" >> /etc/ssh/sshd_config```
+20. ```nano /etc/ssh/sshd_config``` and set "PermitRootLogin **no**" and "PasswordAuthentication **no**"
+21. ```echo "IPV6=no" >> /etc/ufw/ufw.conf```
+22. ```ufw allow OpenSSH```
+23. ```ufw allow https```
+24. ```ufw allow http```
+25. ```ufw --force enable```
+26. ```service ssh restart```
 
 PLease test if you can login via ssh:
 Login via Root shoud not be possible anymore
 Login via webadmin and password should not be possible
 You need to add the local private key to Kitty to authenticae 
 
-## Set up MySqlServer and phpmyadmin with ssl
-1.
+## Set up MySqlServer
+1. ```sudo apt install mysql-server -y```
+2. ```sudo systemctl start mysql.service```
+3. ```sudo mysql```
+4.(in sql) ```ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';```
+5.(in sql) ```quit;```
+6. ```sudo mysql_secure_installation``` (ENTER "password" as password not ROOT password ;)
+8. change root passwort [generade and store password], and disable everthing
+7. remove anynomas
+
+## Connect with mysqlWorkbench over SSH
+1. add openssh private key (you need to converse it from puttygen)
+2. connect
+
+
+## Install Node.Js
+[https://github.com/nodesource/distributions/blob/master/README.md#debinstall](https://github.com/nodesource/distributions/blob/master/README.md#using-ubuntu-2)
+Manual!
+
+
+## Set up Apache 
+# sudo chown -R  webadmin:webadmin /var/www
+(for wordpress installation it should be www-data)
+
+
+## Hndy Toolsi tool
+1.screen
+2.pm2
+
+
+
+
+
+
+
+
+
+
+## ADVANCED SECURITY
+Setup root login notifications 
+
+
+
 
 
 
