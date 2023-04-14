@@ -1,44 +1,42 @@
 
 # enforce https
 <VirtualHost *:80>
-	  ServerName www.domain.url
-  	ServerAlias domain.url
-	  ServerAlias http://domain.url
-	  ServerAlias http://www.domain.url
+    ServerName www.domain.url
+    ServerAlias domain.url
+    ServerAlias http://domain.url
+    ServerAlias http://www.domain.url
 
     # contact email
-	  ServerAdmin hallo@haensse.dev
-    
-  	Redirect permanent / https:/domain.url/
+    ServerAdmin hallo@haensse.dev
+    Redirect permanent / https:/domain.url/
 </VirtualHost>
 
 # www removal 
 <VirtualHost *:443>
-	  ServerName https://www.domain.url
+    ServerName https://www.domain.url
     ServerAlias www.domain.url
-	  ServerAdmin hallo@haensse.dev
+    ServerAdmin hallo@haensse.dev
 
     SSLEngine on
     SSLCertificateFile /etc/apache2/certs/cert.pem
-	  SSLCertificateKeyFile /etc/apache2/certs/key.pem
-
-  	Redirect permanent / https://domain.url
+    SSLCertificateKeyFile /etc/apache2/certs/key.pem
+    Redirect permanent / https://domain.url
 </VirtualHost>
 
 # ################################
 # INCOMING
 <VirtualHost *:443>
-	  ServerName https://domain.url
-	  ServerAdmin hallo@haensse.dev
-	  DocumentRoot /var/www/html
+    ServerName https://domain.url
+    ServerAdmin hallo@haensse.dev
+    DocumentRoot /var/www/html
 
-    # example to proxy
-    ProxyPass "/api" "http://localhost:APIPORT/api"
+    # example to proxy the api
+    # ProxyPass "/api" "http://localhost:APIPORT/api"
 
     SSLEngine on
     SSLCertificateFile /etc/apache2/certs/cert.pem
-	  SSLCertificateKeyFile /etc/apache2/certs/key.pem
+    SSLCertificateKeyFile /etc/apache2/certs/key.pem
 
-	  ErrorLog ${APACHE_LOG_DIR}/sslerror.log
-	  CustomLog ${APACHE_LOG_DIR}/sslaccess.log combined
+    ErrorLog ${APACHE_LOG_DIR}/sslerror.log
+    CustomLog ${APACHE_LOG_DIR}/sslaccess.log combined
 </VirtualHost>
