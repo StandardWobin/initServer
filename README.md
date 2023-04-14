@@ -64,12 +64,12 @@ Manual!
 
 
 ## Set up Apache 
-1. ```sudo chown -R  webadmin:webadmin /var/www```
+1. ```sudo chown -R  webadmin:webadmin /var/www``` *(for wordpress installation it should be www-data)*
 2. safe ssl certficate as key.pem in /etc/apache2/certs/
 3. safe ssl certificate as cert.pem in /etc/apache2/certs/
 4. change default vhost to apache2 init file
 5. ```sudo service apache2 restart```
-(for wordpress installation it should be www-data)
+
 
 
 ## Hndy Toolsi tool
