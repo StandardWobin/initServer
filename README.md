@@ -28,7 +28,10 @@
 10. ```usermod -aG sshlogin webadmin```
 11. ```echo "AllowGroups sshlogin" >> /etc/ssh/sshd_config```
 12. edit /etc/ssh/sshd_config and set "PermitRootLogin **no**" and "PasswordAuthentication **no**"
-13.     
+13.    ````service ssh restart
+echo "IPV6=no" >> /etc/ufw/ufw.conf
+ufw allow OpenSSH
+ufw --force enable```
 
 
 
