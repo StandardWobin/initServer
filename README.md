@@ -67,8 +67,12 @@ Manual!
 1. ```sudo chown -R  webadmin:webadmin /var/www``` *(for wordpress installation it should be www-data)*
 2. safe ssl certficate as key.pem in /etc/apache2/certs/
 3. safe ssl certificate as cert.pem in /etc/apache2/certs/
-4. change default vhost to apache2 init file
-5. ```sudo service apache2 restart```
+4. chown -R root:root /etc/apache2/certs
+5. chmod -R 000 /etc/apache2/certs
+6. change default vhost to apache2 init file
+7. ```sudo a2enmod ssl```
+8. ```sudo a2enmod rewrite```
+9. ```sudo service apache2 restart```
 
 
 
@@ -83,10 +87,8 @@ Manual!
 
 
 
-
-
 ## ADVANCED SECURITY
-Setup root login notifications 
+1. Setup root login notifications 
 
 
 
