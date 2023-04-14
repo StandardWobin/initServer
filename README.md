@@ -1,5 +1,6 @@
 # initServer
 
+this init is for UBUNTU 22
 
 ## needed on you local machine
 1. Filezilla https://filezilla-project.org/
