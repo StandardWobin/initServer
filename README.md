@@ -23,13 +23,14 @@ this init is for UBUNTU 22
 9. ```groupadd sshlogin```
 10. ```adduser webadmin``` [generade and store password]
 11. ```usermod -aG sshlogin webadmin```
+12. ```su webadmin```
 13. ```mkdir -p ~/.ssh ```
 14. copy local **public** ssh key content string via  ```echo "ssh-rsa XXXXXXXXKEXYYYYYYYYYY" >> ~/.ssh/authorized_keys```
 15. ```chmod -R go= ~/.ssh```
 18. ```chown -R webadmin:webadmin ~/.ssh```
 19. ```su root```
-16. ```echo "AllowGroups sshlogin" >> /etc/ssh/sshd_config```
-17. ```nano /etc/ssh/sshd_config``` and set "PermitRootLogin **no**" and "PasswordAuthentication **no**"
+18. ```echo "AllowGroups sshlogin" >> /etc/ssh/sshd_config```
+19. ```nano /etc/ssh/sshd_config``` and set "PermitRootLogin **no**" and "PasswordAuthentication **no**"
 20. ```echo "IPV6=no" >> /etc/ufw/ufw.conf```
 21. ```ufw allow OpenSSH```
 22. ```ufw allow https```
