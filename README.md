@@ -11,7 +11,7 @@ this init is for UBUNTU 22
 ## to do before you ssh
 1. generate ssh files using ```ssh-keygen```
 2. **BACKUP SSL PRIVATY KEY**, if you loose that you are out of the server - forever
-3. convert ssh PUBLIC key to ppk file using puttygen
+3. convert ssh **PUBLIC** key to ppk file using puttygen
 
 
 
@@ -22,7 +22,7 @@ this init is for UBUNTU 22
 3. ```sudo apt update -y```
 4. ```sudo apt upgrade -y```
 5. ```mkdir -p ~/.ssh ```
-6. copy local public ssh key ```echo public_key_string >> ~/.ssh/authorized_keys```
+6. copy local **public** ssh key content string via  ```echo **public_key_string** >> ~/.ssh/authorized_keys```
 7. ```chmod -R go= ~/.ssh```
 8. ```groupadd sshlogin```
 9. ```adduser webadmin``` [generade and store password]
