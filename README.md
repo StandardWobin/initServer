@@ -42,6 +42,10 @@ Login via Root shoud not be possible anymore
 Login via webadmin and password should not be possible
 You need to add the local private key to Kitty to authenticae 
 
+## Set up MySqlServer and phpmyadmin with ssl
+1.
+
+
 
 
 
