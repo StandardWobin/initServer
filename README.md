@@ -19,21 +19,23 @@ this init is for UBUNTU 22
 2. change root password ```passwd root``` [generate and store password]
 3. ```sudo apt update -y```
 4. ```sudo apt upgrade -y```
-5. ```mkdir -p ~/.ssh ```
-6. copy local **public** ssh key content string via  ```echo **public_key_string** >> ~/.ssh/authorized_keys```
-7. ```chmod -R go= ~/.ssh```
-8. ```groupadd sshlogin```
-9. ```adduser webadmin``` [generade and store password]
-10. ```usermod -aG sshlogin webadmin```
-11. ```echo "AllowGroups sshlogin" >> /etc/ssh/sshd_config```
-12. ```nano /etc/ssh/sshd_config``` and set "PermitRootLogin **no**" and "PasswordAuthentication **no**"
-13. ```chown -R webadmin:webadmin ~/.ssh```
-14. ```echo "IPV6=no" >> /etc/ufw/ufw.conf```
-15. ```ufw allow OpenSSH```
-16. ```ufw allow https```
-17. ```ufw allow http```
-18. ```ufw --force enable```
-19. ```service ssh restart```
+
+9. ```groupadd sshlogin```
+10. ```adduser webadmin``` [generade and store password]
+11. ```usermod -aG sshlogin webadmin```
+13. ```mkdir -p ~/.ssh ```
+14. copy local **public** ssh key content string via  ```echo "ssh-rsa XXXXXXXXKEXYYYYYYYYYY" >> ~/.ssh/authorized_keys```
+15. ```chmod -R go= ~/.ssh```
+18. ```chown -R webadmin:webadmin ~/.ssh```
+19. ```su root```
+16. ```echo "AllowGroups sshlogin" >> /etc/ssh/sshd_config```
+17. ```nano /etc/ssh/sshd_config``` and set "PermitRootLogin **no**" and "PasswordAuthentication **no**"
+20. ```echo "IPV6=no" >> /etc/ufw/ufw.conf```
+21. ```ufw allow OpenSSH```
+22. ```ufw allow https```
+23. ```ufw allow http```
+24. ```ufw --force enable```
+25. ```service ssh restart```
 
 PLease test if you can login via ssh:
 Login via Root shoud not be possible anymore
