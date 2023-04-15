@@ -68,14 +68,36 @@ Login via webadmin and password should not be possible
 You need to add the local private key to Kitty to authenticae 
 
 ## Set up MySqlServer
-1. ```sudo apt install mysql-server -y```
-2. ```sudo systemctl start mysql.service```
-3. ```sudo mysql```
-4.(in sql) ```ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';```
-5.(in sql) ```quit;```
-6. ```sudo mysql_secure_installation``` (ENTER "password" as password not ROOT password ;)
-8. change root passwort [generade and store password], and disable everthing
-7. remove anynomas
+1. install my sql server
+```
+sudo apt install mysql-server -y
+```
+
+2. Start Sql Server service
+```
+sudo systemctl start mysql.service
+```
+
+3. Start Mysql Prompts
+```
+sudo mysql
+```
+
+4. (in sql) - remove root password temporary to enable secure installation
+```
+ ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
+```
+ 
+5. (in sql) - quit mysql prompt
+```
+quit;
+```
+
+6. set up my sql enter *password* as password. **generate and store new root password** and deactivate everthing you will be asked and what sounds more secure
+```
+ sudo mysql_secure_installation
+``` 
+
 
 ## Connect with mysqlWorkbench over SSH
 1. add openssh private key (you need to converse it from puttygen)
