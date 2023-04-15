@@ -53,11 +53,12 @@ su root
 
 8. EDIT sshd_config and set "PermitRootLogin **no**" and "PasswordAuthentication **no**"
 ```
- nano /etc/ssh/sshd_config
+nano /etc/ssh/sshd_config
 ``` 
  
 9. Set up firewall  
-```echo "IPV6=no" >> /etc/ufw/ufw.conf && ufw allow OpenSSH && ufw allow https && ufw allow http && ufw --force enable && service ssh restart
+```
+echo "IPV6=no" >> /etc/ufw/ufw.conf && ufw allow OpenSSH && ufw allow https && ufw allow http && ufw --force enable && service ssh restart
 ```
 
 
