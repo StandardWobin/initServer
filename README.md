@@ -26,7 +26,7 @@ sudo apt update -y && sudo apt upgrade -y
 ```
 4. Set up non root user webadmin [generade and store password]
 ```
-groupadd sshlogin && adduser webadmin
+groupadd sshlogin && adduser webadmin && echo "AllowGroups sshlogin" >> /etc/ssh/sshd_config
 ```
 5. Give webadmin sudo and ssh privilges, and switch user
 ```
@@ -39,17 +39,25 @@ mkdir -p ~/.ssh
 
 
 16. copy local **public** ssh key content string via  ```echo "ssh-rsa XXXXXXXXKEXYYYYYYYYYY" >> ~/.ssh/authorized_keys```
-17. ```chmod -R go= ~/.ssh```
-18. ```chown -R webadmin:webadmin ~/.ssh```
-19. ```su root```
-20. ```echo "AllowGroups sshlogin" >> /etc/ssh/sshd_config```
-21. ```nano /etc/ssh/sshd_config``` and set "PermitRootLogin **no**" and "PasswordAuthentication **no**"
-22. ```echo "IPV6=no" >> /etc/ufw/ufw.conf```
-23. ```ufw allow OpenSSH```
-24. ```ufw allow https```
-25. ```ufw allow http```
-26. ```ufw --force enable```
-27. ```service ssh restart```
+
+
+18. set up permissions to ssh folder
+```
+chmod -R go= ~/.ssh && chown -R webadmin:webadmin ~/.ssh
+```
+```
+
+```
+ 
+23. ```su root```
+24. ``````
+25. ```nano /etc/ssh/sshd_config``` and set "PermitRootLogin **no**" and "PasswordAuthentication **no**"
+26. ```echo "IPV6=no" >> /etc/ufw/ufw.conf```
+27. ```ufw allow OpenSSH```
+28. ```ufw allow https```
+29. ```ufw allow http```
+30. ```ufw --force enable```
+31. ```service ssh restart```
 
 PLease test if you can login via ssh:
 Login via Root shoud not be possible anymore
