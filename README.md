@@ -24,16 +24,20 @@ passwd root
 ```
 sudo apt update -y && sudo apt upgrade -y
 ```
-4. Set up non root user  [generade and store password]
+4. Set up non root user webadmin [generade and store password]
 ```
 groupadd sshlogin && adduser webadmin
 ```
+5. Give webadmin sudo and ssh privilges, and switch user
+```
+usermod -aG sshlogin webadmin && usermod -aG sudo webadmin && su webadmin
+```
+5. Create ssh config directory in webadmin folder
+```
+mkdir -p ~/.ssh
+```
 
 
-12. ```usermod -aG sshlogin webadmin```
-13. ```usermod -aG sudo webadmin```
-14. ```su webadmin```
-15. ```mkdir -p ~/.ssh ```
 16. copy local **public** ssh key content string via  ```echo "ssh-rsa XXXXXXXXKEXYYYYYYYYYY" >> ~/.ssh/authorized_keys```
 17. ```chmod -R go= ~/.ssh```
 18. ```chown -R webadmin:webadmin ~/.ssh```
