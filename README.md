@@ -16,9 +16,10 @@ this init is for UBUNTU 22
 
 ## set up and secure basic server
 1. ssh via Kitty
-2. change root password
-3.  ``` 
+2. change root password 
+```  
 passwd root
+``` 
 5.  ``` [generate and store password]
 6. ````sudo apt update -y````
 7. ```sudo apt upgrade -y```
