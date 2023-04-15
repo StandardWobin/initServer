@@ -110,7 +110,12 @@ Manual!
 
 
 ## Set up Apache 
-1. change ownership of webfolder to webadmin (for wordpress installation it should be www-data)
+1. install apache2
+```
+ sudo apt-get install apache2 -y
+``` 
+
+3. change ownership of webfolder to webadmin (for wordpress installation it should be www-data)
 ```
  sudo chown -R  webadmin:webadmin /var/www
 ``` 
