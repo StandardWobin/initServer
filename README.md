@@ -110,15 +110,21 @@ Manual!
 
 
 ## Set up Apache 
-1. ```sudo chown -R  webadmin:webadmin /var/www``` *(for wordpress installation it should be www-data)*
+1. change ownership of webfolder to webadmin (for wordpress installation it should be www-data)
+```
+ sudo chown -R  webadmin:webadmin /var/www
+``` 
 2. safe ssl certficate as key.pem in /etc/apache2/certs/
 3. safe ssl certificate as cert.pem in /etc/apache2/certs/
-4. ```chown -R root:root /etc/apache2/certs```
-5. ```chmod -R 000 /etc/apache2/certs```
-6. change default vhost to apache2 init file
-7. ```sudo a2enmod ssl```
-8. ```sudo a2enmod rewrite```
-9. ```sudo service apache2 restart```
+5. Restrict acces to ssl files
+```
+chown -R root:root /etc/apache2/certs && chmod -R 000 /etc/apache2/certs
+```
+6. Edit default vhost (use template file in this repository)
+7. change default vhost to apache2 init file
+```
+sudo a2enmod ssl && sudo a2enmod rewrite && sudo service apache2 restart```
+```
 
 
 
