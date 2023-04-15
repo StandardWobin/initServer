@@ -38,7 +38,7 @@ mkdir -p ~/.ssh
 ```
 
 
-6. copy local **public** ssh key content string via  ```echo "ssh-rsa XXXXXXXXKEXYYYYYYYYYY" >> ~/.ssh/authorized_keys```
+6. **MODIDY** and copy local **public** ssh key content string via  ```echo "ssh-rsa XXX......YYY....ZZZ...keycode" >> ~/.ssh/authorized_keys```
 
 
 7. set up permissions to ssh folder
