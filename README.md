@@ -16,17 +16,18 @@ this init is for UBUNTU 22
 
 ## set up and secure basic server
 1. ssh via Kitty
-2. change root password 
+2. change root password [generate and store password]
 ```  
 passwd root
 ``` 
-5.  ``` [generate and store password]
-6. ````sudo apt update -y````
-7. ```sudo apt upgrade -y```
+3. Upgrade System
+```
+sudo apt update -y && sudo apt upgrade -y
+```
 9. ```groupadd sshlogin```
 10. ```adduser webadmin``` [generade and store password]
 11. ```usermod -aG sshlogin webadmin```
-11. ```usermod -aG sudo webadmin```
+12. ```usermod -aG sudo webadmin```
 13. ```su webadmin```
 14. ```mkdir -p ~/.ssh ```
 15. copy local **public** ssh key content string via  ```echo "ssh-rsa XXXXXXXXKEXYYYYYYYYYY" >> ~/.ssh/authorized_keys```
