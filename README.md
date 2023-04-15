@@ -50,16 +50,16 @@ chmod -R go= ~/.ssh && chown -R webadmin:webadmin ~/.ssh
 ```
 su root
 ```
+
+8. EDIT sshd_config and set "PermitRootLogin **no**" and "PasswordAuthentication **no**"
+```
+ nano /etc/ssh/sshd_config
+``` 
  
-23. 
-24. ``````
-25. ```nano /etc/ssh/sshd_config``` and set "PermitRootLogin **no**" and "PasswordAuthentication **no**"
-26. ```echo "IPV6=no" >> /etc/ufw/ufw.conf```
-27. ```ufw allow OpenSSH```
-28. ```ufw allow https```
-29. ```ufw allow http```
-30. ```ufw --force enable```
-31. ```service ssh restart```
+9. Set up firewall  
+```echo "IPV6=no" >> /etc/ufw/ufw.conf && ufw allow OpenSSH && ufw allow https && ufw allow http && ufw --force enable && service ssh restart
+```
+
 
 PLease test if you can login via ssh:
 Login via Root shoud not be possible anymore
