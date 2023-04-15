@@ -8,8 +8,8 @@ this init is for UBUNTU 22
 3. Puttygen https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html 
 
 ## to do before you ssh
-1. Genreate public and private key using puttygen
-2. **BACKUP SSL PRIVATY KEY**, if you loose that you are out of the server - forever
+1. Genreate public and private key using puttygen, you need putty and openssh private key
+3. **BACKUP SSL PRIVATY KEYS**, if you loose that you are out of the server - forever
 
 ## SSL Certificates
 1. get private and public keys as SSL Certifacets from provider
