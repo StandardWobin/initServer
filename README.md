@@ -38,18 +38,20 @@ mkdir -p ~/.ssh
 ```
 
 
-16. copy local **public** ssh key content string via  ```echo "ssh-rsa XXXXXXXXKEXYYYYYYYYYY" >> ~/.ssh/authorized_keys```
+6. copy local **public** ssh key content string via  ```echo "ssh-rsa XXXXXXXXKEXYYYYYYYYYY" >> ~/.ssh/authorized_keys```
 
 
-18. set up permissions to ssh folder
+7. set up permissions to ssh folder
 ```
 chmod -R go= ~/.ssh && chown -R webadmin:webadmin ~/.ssh
 ```
-```
 
+7.switch to root
+```
+su root
 ```
  
-23. ```su root```
+23. 
 24. ``````
 25. ```nano /etc/ssh/sshd_config``` and set "PermitRootLogin **no**" and "PasswordAuthentication **no**"
 26. ```echo "IPV6=no" >> /etc/ufw/ufw.conf```
