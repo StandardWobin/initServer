@@ -15,7 +15,7 @@ this init is for UBUNTU 22
 1. get private and public keys as SSL Certifacets from provider
 
 ## set up and secure basic server
-1. ssh via Kitty
+1. ssh via Kitty as root
 2. change root password *generate and store password*
 ```  
 passwd root
@@ -24,24 +24,28 @@ passwd root
 ```
 sudo apt update -y && sudo apt upgrade -y
 ```
-9. ```groupadd sshlogin```
-10. ```adduser webadmin``` [generade and store password]
-11. ```usermod -aG sshlogin webadmin```
-12. ```usermod -aG sudo webadmin```
-13. ```su webadmin```
-14. ```mkdir -p ~/.ssh ```
-15. copy local **public** ssh key content string via  ```echo "ssh-rsa XXXXXXXXKEXYYYYYYYYYY" >> ~/.ssh/authorized_keys```
-16. ```chmod -R go= ~/.ssh```
+4. Set up non root user  [generade and store password]
+```
+groupadd sshlogin && adduser webadmin
+```
+
+
+12. ```usermod -aG sshlogin webadmin```
+13. ```usermod -aG sudo webadmin```
+14. ```su webadmin```
+15. ```mkdir -p ~/.ssh ```
+16. copy local **public** ssh key content string via  ```echo "ssh-rsa XXXXXXXXKEXYYYYYYYYYY" >> ~/.ssh/authorized_keys```
+17. ```chmod -R go= ~/.ssh```
 18. ```chown -R webadmin:webadmin ~/.ssh```
 19. ```su root```
-19. ```echo "AllowGroups sshlogin" >> /etc/ssh/sshd_config```
-20. ```nano /etc/ssh/sshd_config``` and set "PermitRootLogin **no**" and "PasswordAuthentication **no**"
-21. ```echo "IPV6=no" >> /etc/ufw/ufw.conf```
-22. ```ufw allow OpenSSH```
-23. ```ufw allow https```
-24. ```ufw allow http```
-25. ```ufw --force enable```
-26. ```service ssh restart```
+20. ```echo "AllowGroups sshlogin" >> /etc/ssh/sshd_config```
+21. ```nano /etc/ssh/sshd_config``` and set "PermitRootLogin **no**" and "PasswordAuthentication **no**"
+22. ```echo "IPV6=no" >> /etc/ufw/ufw.conf```
+23. ```ufw allow OpenSSH```
+24. ```ufw allow https```
+25. ```ufw allow http```
+26. ```ufw --force enable```
+27. ```service ssh restart```
 
 PLease test if you can login via ssh:
 Login via Root shoud not be possible anymore
