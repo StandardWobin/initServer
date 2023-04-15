@@ -128,7 +128,7 @@ chown -R root:root /etc/apache2/certs && chmod -R 000 /etc/apache2/certs
 6. Edit default vhost (use template file in this repository), delelte all other default vhost
 7. change default vhost to apache2 init file
 ```
-sudo a2enmod ssl && sudo a2enmod rewrite && sudo service apache2 restart```
+sudo a2enmod ssl && sudo a2enmod rewrite && sudo service apache2 restart
 ```
 
 
