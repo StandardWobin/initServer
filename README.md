@@ -9,11 +9,11 @@ NO WARRANTY IF YOU USE THIS SCRIPT
 3. Puttygen https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html 
 
 ## to do before you ssh
-1. Genreate public and private key using puttygen, you need putty and openssh private key
-3. **BACKUP SSL PRIVATY KEYS**, if you loose that you are out of the server - forever
+1. Generate public and private key using puttygen, you need putty and openssh private key
+3. **BACKUP SSL PRIVATE KEYS**, if you loose that you are out of the server - forever and ever and ever
 
 ## SSL Certificates
-1. get private and public keys as SSL Certifacets from provider
+1. get private and public keys as SSL certificates  from provider
 
 ## set up and secure basic server
 1. ssh via Kitty as root
@@ -25,11 +25,11 @@ passwd root
 ```
 sudo apt update -y && sudo apt upgrade -y
 ```
-4. Set up non root user webadmin [generade and store password]
+4. Set up non root user webadmin [generate and store password]
 ```
 groupadd sshlogin && adduser webadmin && echo "AllowGroups sshlogin" >> /etc/ssh/sshd_config
 ```
-5. Give webadmin sudo and ssh privilges, and switch user
+5. Give webadmin sudo and ssh privileges, and switch user
 ```
 usermod -aG sshlogin webadmin && usermod -aG sudo webadmin && su webadmin
 ```
@@ -39,7 +39,7 @@ mkdir -p ~/.ssh
 ```
 
 
-6. **MODIDY** and copy local **public** ssh key content string via  ```echo "ssh-rsa XXX......YYY....ZZZ...keycode" >> ~/.ssh/authorized_keys```
+6. **MODIFY** and copy local **public** ssh key content string via  ```echo "ssh-rsa XXX......YYY....ZZZ...keycode" >> ~/.ssh/authorized_keys```
 
 
 7. set up permissions to ssh folder
@@ -64,11 +64,11 @@ echo "IPV6=no" >> /etc/ufw/ufw.conf && ufw allow OpenSSH && ufw allow https && u
 
 
 PLease test if you can login via ssh:
-Login via Root shoud not be possible anymore
+Login via Root should  not be possible anymore
 Login via webadmin and password should not be possible
-You need to add the local private key to Kitty to authenticae 
+You need to add the local private key to Kitty to authenticate 
 
-## Set up MySqlServer
+## Set up MySql
 1. install my sql server
 ```
 sudo apt install mysql-server -y
@@ -94,7 +94,7 @@ sudo mysql
 quit;
 ```
 
-6. set up my sql enter *password* as password. **generate and store new root password** and deactivate everthing you will be asked and what sounds more secure
+6. set up my sql enter *password* as password. **generate and store new root password** and deactivate everything  you will be asked and what sounds more secure
 ```
  sudo mysql_secure_installation
 ``` 
@@ -116,7 +116,7 @@ Manual!
  sudo apt-get install apache2 -y && sudo service apache2 stop
 ``` 
 
-3. change ownership of webfolder to webadmin (for wordpress installation it should be www-data)
+3. change ownership of web folder to webadmin (for wordpress installation it should be www-data)
 ```
  sudo chown -R  webadmin:webadmin /var/www
 ``` 
@@ -126,7 +126,7 @@ Manual!
 ```
 chown -R root:root /etc/apache2/certs && chmod -R 000 /etc/apache2/certs
 ```
-6. Edit default vhost (use template file in this repository), delelte all other default vhost
+6. Edit default vhost (use template file in this repository), delete all other default vhost
 7. change default vhost to apache2 init file
 ```
 sudo a2enmod ssl && sudo a2enmod rewrite && sudo service apache2 restart
@@ -134,19 +134,6 @@ sudo a2enmod ssl && sudo a2enmod rewrite && sudo service apache2 restart
 
 
 
-## Hndy Toolsi tool
-1.screen
-2.pm2
-
-
-
-
-
-
-
-
-## ADVANCED SECURITY
-1. Setup root login notifications 
 
 
 
