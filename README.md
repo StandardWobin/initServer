@@ -1,6 +1,8 @@
 # initServer
+This is a small set up script for Ubuntu22 cloud / virtual server with root ssh access.
+Ideal for basic web apps with DBMS on localhost for smaller projects. 
 
-this init is for UBUNTU 22
+
 NO WARRANTY IF YOU USE THIS SCRIPT
 
 ## needed on you local machine
